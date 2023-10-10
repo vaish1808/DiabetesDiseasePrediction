@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style type = text/css>
+    div{
+        color:white;
+    }
+
+        body{
+        background-image:url("{%static 'source.gif'%}");
+        background-repeat: no-repeat;
+        background-attachment:fixed;
+        background-size: 60%;
+        background-position: center;
+        opacity:0.8;
+        }
+    .button {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: #f1f1f1;
+  color: black;
+  font-size: 16px;
+  padding: 20px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+
+}
+.button1:hover {
+  background-color: black;
+  color: white;
+}
+    </style>
+</head >
+<body>
+
+        <form action = "info">
+        <input type = "submit" class="button button1" value = "Lets get started">
+        </form>
+    </div>
+
+</body>
+</html>

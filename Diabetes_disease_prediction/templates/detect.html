@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detection page</title>
+    <style>
+        body{
+             background-image:url("{%static 's3.jpg'%}");
+             background-repeat: no-repeat;
+             background-attachment:fixed;
+             background-size: 50%;
+             background-position: left;
+       }
+       *{
+       font-family: 'Nunito', sans-serif;
+       }
+       .main{
+       position:absolute;
+       top:50px;
+       left:50%;
+       width:500px;
+       background-color:#ffffff;
+       border-radius:20%;
+<!--       border: 1.7px solid black;-->
+       align-items:center;
+       padding:2%;
+       }
+       .result{
+       color : #240e69;
+       position: absolute;
+       margin-left: 170px;
+       }
+       h1{
+           color:#240e69;
+           font-size:30px;
+           font-weight:bold;
+       }
+       input[type=submit]{
+       background-color:#C70039;
+       border:2px;
+       border: .2rem solid #C70039 ;
+       color:white;
+       padding:10px 30px;
+       cursor:pointer;
+       margin-top:30px;
+       margin-bottom:30px;
+       }
+       .btn:hover{
+            color: #C70039;
+            background-color: white;
+       }
+
+    </style>
+
+</head>
+<body>
+    <div align = 'center' class="main" style = "font-size: 20px; font-weight:bold">
+        <h1>Please enter the following information:</h1>
+        <form action="result">
+            <input type="text" placeholder="No. of pregnancies" id="Pregnancies:" name="n1" style="height: 30px; width: 180px; margin-right:20px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="Glucose level" name="n2" style="height: 30px; width: 180px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="Blood Pressure" name="n3" style="height: 30px; width: 180px; margin-bottom:17px; margin-right:20px; font-size: 15px;">
+            <input type="text" placeholder="Skin thickness" name="n4" style="height: 30px; width: 180px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="Insulin" name="n5" style="height: 30px; width: 180px; margin-right:20px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="BMI" name="n6" style="height: 30px; width: 180px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="Diabetes pedigree function" name="n7" style="height: 30px; width: 180px; margin-right:20px; margin-bottom:17px; font-size: 15px;">
+            <input type="text" placeholder="Age" name="n8" style="height: 30px; width: 180px; margin-bottom:17px; font-size: 15px;"><br>
+            <input type="submit" class="btn" style = "font-size: 18px;">
+        </form>
+        <div class="result">Status :   {{   result2 }}</div>
+
+
+    </div>
+</body>
+</html>

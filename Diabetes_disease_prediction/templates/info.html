@@ -1,0 +1,1233 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Details</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700&display=swap');
+    @import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+    :root{
+    --orange:#C70039;
+    }
+    *{
+    font-family: 'Nunito', sans-serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    outline: none; border: none;
+    text-decoration: none;
+    transition: all .2s linear;
+    }
+    *::selection{
+    background: var(--orange);
+    color: #fff;
+    }
+    html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 6rem;
+    scroll-behavior: smooth;
+    }
+    header{
+    position: fixed;
+    top:0; left:0;
+    right:0;
+    background: #141E46;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 1.5rem 9%;
+    padding-left: 2rem;
+}
+section{
+    padding: 2rem 9%;
+}
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+
+header .logo{
+    position: relative;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: #fff;
+    text-transform: capitalize;
+    font-style: italic;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: -50px;
+
+}
+
+
+header .navbar a{
+    color: #fff;
+    font-size: 2rem;
+    margin-left: 40px;
+
+}
+
+header .navbar a:hover{
+    color: var(--orange);
+}
+
+header .icons i{
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+    margin-right: 2rem;
+}
+
+header .icons i:hover{
+    color: var(--orange);
+}
+
+#menu-bar{
+    color:#fff;
+    border:.1rem solid #fff;
+    border-radius: .5rem;
+    font-size: 3rem;
+    padding: .5rem 1.2rem;
+    cursor: pointer;
+    display: none;
+
+}
+
+@media (max-width:1200px){
+    html{
+        font-size: 55%;
+    }
+}
+@media (max-width:991px){
+    header{
+        padding: 2rem;
+    }
+}
+@media (max-width:768px){
+    #menu-bar{
+        display: initial;
+    }
+
+    header .navbar{
+        position: absolute;
+        top:100%; right: 0; left: 0;
+        background: #333;
+        border-top: .1rem solid rgba(255, 255, 255, .2);
+        padding:1rem 2rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    }
+
+    header .navbar.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+
+    }
+
+    header .navbar a{
+        display: block;
+        border-radius: .5rem;
+        padding: 1rem;
+        margin: 1.5rem 0;
+        background: #222;
+    }
+
+}
+@media (max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}
+.food{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+
+.heading{
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+.heading span{
+    font-size: 3rem;
+    background: rgba(20, 30, 70, 0.9);
+    color: #fff;
+    border-radius: .5rem;
+    padding: .2rem 1rem;
+    text-transform : uppercase;
+}
+
+.heading span.space{
+    background: none;
+}
+.container{
+width:1210px;
+height:60vh;
+background: white;
+display: flex;
+align-items:center;
+}
+
+.gallery{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left:40px;
+}
+.img-box{
+    width: 100px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 50px;
+    background: url("{%static 'brocoli.webp'%}");
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s;
+}
+
+.img-box:nth-child(2){
+    background: url("{%static 'flax.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(3){
+    background: url("{%static 'spinach.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(4){
+    background: url("{%static 'carrot.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(5){
+    background: url("{%static 'avacado.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(6){
+    background: url("{%static 'almonds.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(7){
+    background: url("{%static 'pumpkin.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.img-box:nth-child(8){
+    background: url("{%static 'bitter.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box:nth-child(9){
+    background: url("{%static 'brownrice.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+
+.img-box h2{
+    color: #fff;
+    position: relative;
+    top: 220px;
+    left: 5px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+
+   }
+ .img-box p{
+    color: #fff;
+    position: relative;
+    top: 220px;
+    left: 5px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+
+   }
+
+.img-box:hover{
+    width: 300px;
+    cursor: pointer;
+
+}
+.img-box:hover h2{
+    opacity: 1;
+    bottom: 25px;
+
+}
+.img-box:hover p{
+    opacity: 1;
+    bottom: 25px;
+
+}
+
+.image-box{
+    width: 100px;
+    height: 300px;
+    margin: 10px;
+    border-radius: 50px;
+    background: url("{%static 'whiterice.jpg'%}");
+    background-size: cover;
+    background-position: center;
+    transition: width 0.5s;
+}
+
+.image-box:nth-child(2){
+    background: url("{%static 'fj.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(3){
+    background: url("{%static 'f&p.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(4){
+    background: url("{%static 'soft.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(5){
+    background: url("{%static 'chinese.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(6){
+    background: url("{%static 'bakery.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(7){
+    background: url("{%static 'burger.jpg'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(8){
+    background: url("{%static 'sweetener.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+.image-box:nth-child(9){
+    background: url("{%static 'alcohol.webp'%}");
+    background-size: cover;
+    background-position: center;
+}
+
+.image-box h2{
+    color: #fff;
+    position: relative;
+    top: 220px;
+    left: 5px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+
+   }
+ .image-box p{
+    color: #fff;
+    position: relative;
+    top: 220px;
+    left: 5px;
+    opacity: 0;
+    transition: bottom 0.5s, opacity 0.5s;
+
+   }
+
+.image-box:hover{
+    width: 300px;
+    cursor: pointer;
+
+}
+.image-box:hover h2{
+    opacity: 1;
+    bottom: 25px;
+
+}
+.image-box:hover p{
+    opacity: 1;
+    bottom: 25px;
+
+}
+
+.Exercise .Info h1{
+    font-size: 3rem;
+    text-align: center;
+    padding: 1rem;
+}
+
+
+.Exercise .box-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.Exercise .box-container .box{
+    width: 30%;
+    border-radius: .5rem;
+    overflow: hidden;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+}
+
+.Exercise .box-container .box img{
+    height: 25rem;
+    width: 100%;
+    object-fit: cover;
+
+}
+
+.Exercise .box-container .box .content{
+    padding: 2rem;
+
+}
+
+.Exercise .box-container .box .content .read-more-btn{
+    color: #0984e3;
+}
+
+.Exercise .box-container .box .content .read-more-text{
+    display: none;
+}
+
+.Exercise .box-container .box .content .read-more-text--show{
+    display: inline;
+}
+
+.Exercise .box-container .box .content h3{
+    font-size: 2rem;
+    color: #141E46 ;
+
+}
+
+.Exercise .box-container .box .content h3 i{
+    color: var(--orange);
+
+}
+
+.Exercise .box-container .box .content p{
+    font-size: 1.5rem;
+    color: #666;
+    padding: 1rem 0;
+}
+
+.symptom .review-slider{
+    padding-bottom: 2rem;
+}
+
+.symptom .box{
+    width: 300px;
+    padding: 2rem;
+    text-align: center;
+    box-shadow: 0 1rem 1rem rgba(0,0,0,.1);
+    border-radius: .5rem;
+}
+
+.symptom .box img{
+    height: 16rem;
+    width: 16rem;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+
+}
+
+
+
+.symptom .box h3{
+    color: #333;
+    font-size: 2.5rem;
+
+}
+
+.symptom .box h2{
+    color: #141E46;
+}
+.symptom .box p{
+    color: #666;
+    font-size: 1.5rem;
+    padding: 1rem 0;
+}
+
+.symptom .box .stars i{
+    color: var(--orange);
+    font-size: 1.7rem;
+
+}
+
+.null{
+    color:#444;
+}
+.home{
+    min-height: 100vh;
+    display: flex;
+    align-items: right;
+    justify-content: center;
+    flex-flow: column;
+    position: relative;
+    z-index: 0;
+}
+
+.home .content{
+    text-align: right;
+}
+
+
+
+.home .content span .btn{
+    display: inline-block;
+    position: absolute;
+    background: var(--orange);
+    color: #fff;
+    margin-top: 3rem;
+    margin-left: 0.2rem;
+    left: 69%;
+    padding: .2rem 5rem;
+    border: .2rem solid var(--orange);
+    cursor: pointer;
+    font-size: 1.7rem;
+
+
+}
+.home .content span .btn .holy{
+    position: relative;
+    left: 1px;
+}
+.home .content span{
+  display: inline-block;
+  position: absolute;
+  left: 71%;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+  opacity: 0;
+  filter: blur(4px);
+}
+
+.home .content .btn:hover{
+    background: #fff;
+    color: var(--orange);
+}
+
+.home .controls img{
+    position: absolute;
+    display: block;
+    top: 50px; left:0;
+    z-index: -1;
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+    margin-right: 20px;
+
+}
+.home .content h1 {
+  font-size: 3rem;
+  color: #141E46;
+  text-transform: capitalize;
+  margin-left: 20px;
+  transform: scale(0.94);
+  animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+.home .content p{
+    font-size: 1.5rem;
+    color: #9e9d99;
+    transform: scale(0.94);
+    animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.home .content p span{
+   opacity: 0;
+   filter: blur(4px);
+
+}
+.home .content p .hell{
+    position: absolute;
+    left : 66%;
+}
+.home .content p .span1{
+    position: absolute;
+    left : 66.5%;
+}
+.home .content p .well{
+    position: absolute;
+    left : 69%;
+}
+
+@keyframes scale {
+  100% {
+    transform: scale(1);
+  }
+}
+
+.home .content h1 span {
+  text-align: right;
+  opacity: 0;
+  filter: blur(4px);
+}
+.home .content h1 .deep{
+   position: absolute;
+   left : 64%;
+}
+.home .content h1 .whole{
+   position: absolute;
+   left : 67%;
+}
+
+.home .content span:nth-child(1) {
+  animation: fade-in 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(2) {
+  animation: fade-in 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(3) {
+  animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(4) {
+  animation: fade-in 0.8s 0.4s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(5) {
+  animation: fade-in 0.8s 0.5s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(6) {
+  animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.home .content span:nth-child(7) {
+  animation: fade-in 0.8s 0.7s forwards cubic-bezier(0.11, 0, 0.5, 0);
+}
+
+.types .container{
+    position: relative;
+    width: 110%;
+    height: 700px;
+    right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    color: #73716b;
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    font-size: 1.6rem;
+}
+.types .container p{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -30px;
+}
+.types .container h2{
+    margin-top: -60px;
+    padding: 0rem 1.5rem 1rem 1.5rem;
+}
+.types .container .special{
+    margin-top: -90px;
+    margin-left: 50px;
+}
+.types .container .spec{
+    margin-top: -110px;
+}
+
+.causes .container{
+    position: relative;
+    width: 110%;
+    height: 700px;
+    right: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: flex-start;
+    color: #73716b;
+    background-color: #fff;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,.1);
+    font-size: 1.6rem;
+}
+.causes .container .s4{
+    margin-top : -80px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.causes .container .s2{
+    margin-top : -160px;
+    margin-left: 10px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.causes .container  .s3{
+    margin-top: 30px;
+    margin-left: -480px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.causes .container .s1{
+    margin-top: -200px;
+    margin-left: 10px;
+    padding: 1rem 1.5rem 1rem 1.5rem;
+}
+.causes .container .s6{
+    margin-top : -110px;
+    margin-left: 10px;
+}
+.causes .container .s7{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -80px;
+    margin-left: 10px;
+}
+.causes .container .s8{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -170px;
+    margin-left: 10px;
+}
+.causes .container .s12{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -210px;
+    margin-left: 10px;
+}
+.causes .container .s11{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -210px;
+    margin-left: 10px;
+}
+.causes .container .s13{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -180px;
+    margin-left: 10px;
+}
+.causes .container .s14{
+    padding: 1rem 1.5rem 1rem 1.5rem;
+    margin-top: -110px;
+    margin-left: -225px;
+}
+
+
+
+@keyframes fade-in {
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+    </style>
+</head >
+<body>
+
+       <!-- header section starts -->
+    <header>
+        <div id="menu-bar" class="fas fa-bars"></div>
+        <a href="#" class="logo">DiaSense&#129656;</a>
+
+        <nav class="navbar">
+            <a href="#home">home</a>
+            <a href="#types">types</a>
+            <a href="#symptoms">symptoms</a>
+            <a href="#causes">causes</a>
+            <a href="#Exercise">Exercise</a>
+            <a href="#food">Food & Nutrition</a>
+
+
+        </nav>
+
+    </header>
+<div>
+    <!-- header section ends -->
+       <!-- home section starts -->
+        <section class="home" id="home">
+            <div class="content">
+                <h1>
+  <span class="deep">Your Journey to Diabetes</span><br>
+  <span class="whole">Wellness Starts Here</span>
+  <br>
+</h1>
+                <p><b><i><span class="hell">Everything You Need to Know About Diabetes. </span><br><span class="span1">Discover Your Diabetes Status, Embrace Your </span> <br><span class="well">Wellness Journey. Your Diabetes Hub.</span></i></b></p><br>
+                <form action="detect">
+                <span><button class="btn"><b>Check <span class="holy">status</span> </b></button></span>
+                </form>
+
+            </div>
+
+            <div class="controls">
+                <img src="{%static 'd2.jpg'%}" alt="">
+            </div>
+
+        </section>
+        <!-- home section ends -->
+<br>
+<br>
+<br>
+    <!-- type section starts -->
+<div>
+    <section class="types" id="types">
+        <h1 class="heading">
+            <span>T</span>
+            <span>y</span>
+            <span>p</span>
+            <span>e</span>
+            <span>s</span>
+
+        </h1>
+        <div class="container">
+
+            <p>Diabetes is a health condition that affects how your body handles a sugar called glucose. When you eat food, your body breaks down the carbohydrates in that food into glucose, which is like fuel for your body. Normally, your body has a system to control the amount of glucose in your blood. It's like a balance. Insulin, which is a hormone made by your pancreas, helps keep this balance in check. <br><br>
+                In diabetes, something goes wrong with this balance. When the balance of glucose in your blood is off, it can cause problems over time. High blood sugar can damage your organs and cause health issues like heart disease, kidney problems, eye issues, and more.</p>
+
+            <h2>Types of Diabetes</h2>
+                <p class="special">There are a few different types of diabetes :<br><br>
+
+                    <i class="fa-solid fa-circle"></i> <b>Type 1 :</b> Type 1 diabetes is an autoimmune disease. The immune system attacks and destroys cells in the pancreas, where insulin is made. It’s unclear what causes this attack. <br>
+<i class="fa-solid fa-circle"></i> <b>Type 2 :</b> Type 2 diabetes occurs when your body becomes resistant to insulin, and sugar builds up in your blood. It’s the most common type—about 90% to 95%Trusted Source of people living with diabetes have type 2. <br>
+<i class="fa-solid fa-circle"></i> <b>Type 1.5 :</b> Type 1.5 diabetes is also known as latent autoimmune diabetes in adults (LADA). It occurs during adulthood and sets in gradually like type 2 diabetes. LADA is an autoimmune disease that cannot be treated by diet or lifestyle. <br>
+<i class="fa-solid fa-circle"></i> <b>Gestational :</b> Gestational diabetes is high blood sugar during pregnancy. Insulin-blocking hormones produced by the placenta cause this type of diabetes.</p>
+                <h2>Prediabetes</h2>
+            <p class="spec"><b>Prediabetes</b> is the term that’s used when your blood sugar is higher than expected, but it’s not high enough for a diagnosis of type 2 diabetes. It occurs when the cells in your body don’t respond to insulin the way they should. This can lead to type 2 diabetes down the road.
+
+                Experts suggest that more than <b>1 in 3</b> AmericansTrusted Source have prediabetes, but <b>over 80%</b> Trusted Source of people with prediabetes don’t even know it.</p>
+
+
+        </div>
+        <br>
+        <br>
+        <br>
+    </section>
+    <!-- type section ends -->
+
+<br>
+<br>
+<br>
+
+    <!-- symptom section starts -->
+<div>
+    <section class="symptom" id="symptom">
+        <h1 class="heading">
+            <span>s</span>
+            <span>y</span>
+            <span>m</span>
+            <span>p</span>
+            <span>t</span>
+            <span>o</span>
+            <span>m</span>
+            <span>s</span>
+
+        </h1>
+        <br>
+        <br>
+        <br>
+
+        <!-- symptoms-->
+        <div class="swiper-container symptom-slider" id="symptoms">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img1.gif'%}" alt="">
+                        <h2><big>Increased thirst</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img2.jpg'%}" alt="">
+                        <h2><big>slow healing cuts & sores</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img3.gif'%}" alt="">
+                        <h2><big>Fatigue</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img4.gif'%}" alt="">
+                        <h2><big>Blurred vision</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img5.gif'%}" alt="">
+                        <h2><big>Frequent urination</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img6.gif'%}" alt="">
+                        <h2><big>Unexplained weight loss</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img7.gif'%}" alt="">
+                        <h2><big>Increased hunger</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img8.jpg'%}" alt="">
+                        <h2><big>Tingling in hands</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img9.jpg'%}" alt="">
+                        <h2><big>Vaginal infection</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img10.webp'%}" alt="">
+                        <h2><big>High blood sugar</big></h2>
+
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="box">
+                        <img src="{%static 'img11.gif'%}" alt="">
+                        <h2><big>dry skin</big></h2>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+    <!-- symptoms section ends -->
+
+     <!-- causes section starts -->
+    <section class="causes" id="causes">
+            <div class="content">
+                <h1 class="heading">
+            <span>c</span>
+            <span>a</span>
+            <span>u</span>
+            <span>s</span>
+            <span>e</span>
+            <span>s</span>
+
+        </h1>
+        <div class="container">
+
+            <p class="s4">Different causes are associated with each type of diabetes.</p>
+
+            <h2 class="s3">Type 1 diabetes</h2>
+                <p class="s7">Doctors don’t know exactly what causes type 1 diabetes. For some reason, the immune system mistakenly attacks and destroys insulin-producing beta cells in the <b>pancreas</b>.<br>
+
+                    Genes may play a role in some people. It’s also possible that a virus sets off an immune system attack.</p><br><br>
+
+                <h2 class="s6">Type 2 diabetes</h2>
+            <p class="s8">Type 2 diabetes stems from a combination of <b>genetics</b> and lifestyle factors. Having overweight or <b>obesity</b> increases your risk, too. Carrying extra weight, especially <b>in your belly</b>, makes your cells more resistant to the effects of insulin on your blood sugar.<br>
+                This condition runs in families. Family members share genes that make them more likely to get type 2 diabetes and to be overweight.</p>
+
+                <h2 class="s2">Type 1.5 diabetes</h2>
+            <p class="s1">Type 1.5 is an autoimmune condition that occurs when the pancreas is attacked by your own antibodies. as in type 1. It may be genetic, but more research is needed.</p>
+
+                <h2 class="s12">Gestational diabetes</h2>
+            <p class="s11">Gestational diabetes occurs as the result of hormonal changes during pregnancy. The placenta produces hormones that make a pregnant person’s cells less sensitive to the effects of insulin. This can cause high blood sugar during pregnancy.<br>
+
+People who are overweight when they get pregnant or who gain too much weight during pregnancy are more likely to get gestational diabetes.</p>
+<h2 class="s13">The bottom line</h2>
+            <p class="s14">Both genes and environmental factors play a role in triggering diabetes.</p>
+        </div>
+        <br>
+        <br>
+        <br>
+
+            </div>
+        </section>
+    <!-- causes section ends -->
+
+    <!-- Exercise section starts -->
+    <section class="Exercise" id="Exercise">
+        <h1 class="heading">
+        <span>E</span>
+        <span>x</span>
+        <span>e</span>
+        <span>r</span>
+        <span>c</span>
+        <span>i</span>
+        <span>s</span>
+        <span>e</span>
+    </h1>
+        <br>
+        <br>
+        <br>
+
+    <div class="box-container">
+
+            <div class="box">
+                <img src="{%static 'walk.gif'%}" alt="">
+                <div class="content">
+                    <h3>Walking</h3>
+                    <p>Walking is a low-impact activity that many people enjoy. Getting your steps can improve your blood pressure, glucose, and cholesterol levels. And 30 minutes of brisk walking –– or about 100 steps a minute –– is a great way to meet the ADA's recommendation for daily aerobic exercise</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'cycle.gif'%}" alt="">
+                <div class="content">
+                    <h3>Cycling</h3>
+                    <p>Bicycling is also a form of aerobic exercise, says the HHS, one that makes your heart stronger and your lungs function better, and is a calorie burner to boot. Just riding a few times per week as a casual mode of transportation was found to reduce the risk of obesity, high blood pressure, and triglyceride levels, according to a study.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'swim.gif'%}" alt="">
+                <div class="content">
+                    <h3>Swimming</h3>
+                    <p>Aquatic activities provide another joint-friendly exercise option. For example, swimming, water aerobics, aqua jogging, and other aquatic activities can give your heart, lungs, and muscles a workout, while putting little stress on your joints. A 2017 review Trusted Source found that aquatic exercise can help lower blood sugar levels, much like land based exercise does.</p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'aerobic.gif'%}" alt="">
+                <div class="content">
+                    <h3>Aerobic dance</h3>
+                    <p>Signing up for an aerobic dance or other fitness class might also help you meet your exercise goals. For instance, Zumba is a fitness program that combines dance and aerobic movements for a fast-paced workout. A 2015 study Trusted Source found that women with type 2 diabetes were more motivated to exercise after taking part in Zumba classes for 16 weeks.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'wl.gif'%}" alt="">
+                <div class="content">
+                    <h3>Weightlifting</h3>
+                    <p>Weightlifting and other strengthening activities help build your muscle mass, which can increase the number of calories you burn each day. Strength training may also help improve your blood sugar control, according to the ADA. If you want to incorporate weightlifting into your weekly exercise routine, you can use weight machines or even heavy household objects.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'jump.gif'%}" alt="">
+                <div class="content">
+                    <h3>Calisthenics</h3>
+                    <p>In calisthenics, you use your own bodyweight to strengthen your muscles. Common calisthenic exercises include pushups, pullups, squats, lunges, and abdominal crunches. Whether you choose to strengthen your muscles with weights, resistance bands, or your own body weight, try to work out every major muscle group in your body. 
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'pilates.gif'%}" alt="">
+                <div class="content">
+                    <h3>Pilates</h3>
+                    <p>Pilates is a popular fitness program that’s designed to improve core strength, coordination, and balance. According to a 2020 study of older adult women with type 2 diabetes, it may also help improve blood sugar control. Consider signing up for a Pilates class at your local gym or Pilates studio. Many instructional videos and books are also available.
+                    </p>
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'yoga.gif'%}" alt="">
+                <div class="content">
+                    <h3>Yoga</h3>
+                    <p>According to a 2016 review, yoga can help people with type 2 diabetes manage their blood sugar, cholesterol levels, and weight. It might also help lower your blood pressure, improve the quality of your sleep, and boost your mood. If you’re interested in trying yoga, sign up for a class at a local studio or gym.
+                </div>
+            </div>
+
+            <div class="box">
+                <img src="{%static 'cs.gif'%}" alt="">
+                <div class="content">
+                    <h3>Climb Stairs</h3>
+                    <p>This can be a healthy and easy way to burn calories and get your heart and lungs working faster, especially if you have type 2 diabetes. Going up and down stairs for 3 minutes about an hour or two after a meal is a good way to burn off blood sugar. You can do it anywhere there’s a staircase, like when you need a break from work.
+                    </p>
+               </div>
+            </div>
+
+        </div>
+
+        </div>
+
+
+    </section>
+     <!-- Exercise section ends -->
+
+
+       <!-- food section starts -->
+        <section class="food" id="food">
+            <h1 class="heading">
+            <span>B</span>
+            <span>e</span>
+            <span>s</span>
+            <span>t</span>
+            <span class="space"> </span>
+            <span>F</span>
+            <span>o</span>
+            <span>o</span>
+            <span>d</span>
+        </h1>
+            <br>
+        <br>
+        <br>
+            <div class="container">
+                <div class="gallery">
+                    <div class="img-box">
+                        <h2>Broccoli</h2>
+                        <p>It is rich source of Vitamin K & Vitamin C. It also has high fiber content which can help reduce diabetes.</p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Flax seeds</h2>
+                        <p>These seeds are rich in fiber and also have high content of Omega-3 fatty acids, beneficial for heart health</p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Spinach</h2>
+                        <p>These leaves are ideal source of Vitamin A & have low calories. It also has rich calcium & potassium content.</p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Carrot</h2>
+                        <p>Carrots are must-take ingredients for vitamin A & fiber. Promotes radiance in the skin & solves eyesight problems. </p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Avacados</h2>
+                        <p>It has highest dietary fiber content and is very good for people with diabetes as it has low sugar level. It is also rich in vitamin C.</p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Almonds</h2>
+                        <p>They are excellent source of iron, zinc, vitamin B, and E. It also has high protein content and helps prevent diabetes.</p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Pumpkin</h2>
+                        <p>It is highest source of Vitamin A that regulates blood purification in body. As long as you eat single portion of pumpkin, it significantly affects blood sugar levels.  </p>
+                    </div>
+                    <div class="img-box">
+                        <h2>Bitter gourd</h2>
+                        <p>It is excellent food for diabetes. Rich in vitamin A, C and B6. Aids in detox & stabilize body nutrients. </p>
+                    </div>
+
+                    <div class="img-box">
+                        <h2>Brown rice</h2>
+                        <p>This staple diet is ideal for diabetic patients & people who try to lose weight. It has high fiber content & few calories.</p>
+                    </div>
+                </div>
+
+            </div>
+            <h1 class="heading">
+            <span>W</span>
+            <span>o</span>
+            <span>r</span>
+            <span>s</span>
+            <span>t</span>
+            <span class="space"> </span>
+            <span>F</span>
+            <span>o</span>
+            <span>o</span>
+            <span>d</span>
+        </h1>
+            <br>
+        <br>
+        <br>
+            <div class="container">
+                <div class="gallery">
+                    <div class="image-box">
+                        <h2>White rice</h2>
+                        <p>It is known to have a high glycemic index, which tends to spike sugar levels in the blood. It is advised to avoid all food items prepared with white rice. </p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Fruit juices & Milk shakes</h2>
+                        <p>Fruit juices tend to have sugar in the concentrated form due to the loss of fiber, which means more sugar enters the body. The same applies to milk shakes.</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Fatty & processed meats</h2>
+                        <p>Red meat is high in fats and processed meat is high in sodium. They play a major role in the occurrence and worsening of heart disease and Diabetes is also linked to it.</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Soft Drinks & Blended coffee</h2>
+                        <p>Carbonated drinks have high sugar content and have no nutritional benefits. They contain empty calories and will spike sugar levels. </p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Chinese Food</h2>
+                        <p>It is rich in calories, carbohydrates, fat and sodium. All these factors adversely affect the control of blood sugars.</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Bakery Products</h2>
+                        <p>Most baked products, like bread, buns, doughnuts, cakes, etc. are made from white flour which has a high glycemic index. Due to the added sugar and butter,they are high in calories.</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Fried foods</h2>
+                        <p>Fried food like Fried fish, Meat and French fries contain high amounts of fat, calories and carbohydrates which can all create havoc on blood sugar levels.</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Sweeteners</h2>
+                        <p>People tend to think that “natural” sweeteners like honey or maple syrup are okay, but the body doesn’t distinguish between sugars — it just knows it’s sugar. These natural sugars still cause a spike in blood sugar. T</p>
+                    </div>
+                    <div class="image-box">
+                        <h2>Alcohol</h2>
+                        <p>Alcohol can either cause blood glucose levels to rise or fall, depending on the quantity consumed and the medications being taken for Diabetes.</p>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+          </section>
+    <!-- food section ends -->
+
+</div>
+
+
+
+
+<script>
+
+var swiper = new Swiper('.symptom-slider', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    loop: true,
+    coverflowEffect: {
+        rotate: 50,
+        stretch: 0,
+        depth: 100,
+        modifier: 1,
+        slideShadows: true,
+    },
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+        reverseDirection: true,
+      },
+
+    breakpoints: {
+        320: {
+            slidesPerView: 1,
+        },
+        480: {
+            slidesPerView: 2,
+        },
+        640: {
+            slidesPerView: 3,
+        },
+    },
+});
+
+</script>
+
+
+</body>
+</html>
