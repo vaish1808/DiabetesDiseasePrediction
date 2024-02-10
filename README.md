@@ -2,7 +2,7 @@
 ## Introduction
 Diasense is a website that not only predicts risk associated with the diabetes but also offers vital information on diabetes such as its
 types, symptoms, causes, recommended exercises, and dietary advice thus serving as an informative and diagnostic
-platform.
+platform. Dataset was used to train ML model (i.e Logistic Regression) to predict the result based on various deciding factors. The predicted result is 80% accurate
 
 ## Dataset
 I gathered the dataset from Kaggle, link for the same is https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database. This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.
