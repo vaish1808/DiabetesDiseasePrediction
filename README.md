@@ -5,3 +5,8 @@ platform.
 Libraries used : Numpy, Pandas, Scikit-Learn
 
 Tech Stack: HTML, CSS, Javascript, Python, Django, Machine Learning
+
+
+https://github.com/vaish1808/DiabetesDiseasePrediction/assets/140848722/59c10cc1-d4b5-4867-8148-0e7c301647e9
+
+
