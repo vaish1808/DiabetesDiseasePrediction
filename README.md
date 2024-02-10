@@ -13,6 +13,15 @@ The libraries required for this project are:<br>
 • Pandas (data analysis & manipulation)<br>
 • sklearn (Machine learning library).
 
+#### Preprocessing the dataset
+• Check for missing data : As sometimes if values are missing it might create error while training model. <br>
+• Co-relation matrix : used to find co-relation b/w various columns. <br>
+• Heat map : Since results of co-relation are not that clear so to visualise it in better manner we plot heat map....darker the color, least is the co-relation, outcome least dependent on bp & most on glucose. <br>
+• Training &amp; testing model : Created 2 variables X (independent columns) &amp; Y(Dependent column). 80% data training &amp; 20% data
+testing. <br>
+• To increase accuracy : use different train to test ratio, normalize data
+&amp; change classifier.
+
 Tech Stack: HTML, CSS, Javascript, Python, Django, Machine Learning
 
 
