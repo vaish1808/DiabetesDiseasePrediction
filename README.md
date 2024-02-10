@@ -7,7 +7,11 @@ platform.
 ## Dataset
 I gathered the dataset from Kaggle, link for the same is https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database. This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.
 
-Libraries used : Numpy, Pandas, Scikit-Learn
+### Required Libraries
+The libraries required for this project are:
+• Numpy (to perform logical/mathematical operations on arrays/matrices)
+• Pandas (data analysis & manipulation)
+• sklearn (Machine learning library).
 
 Tech Stack: HTML, CSS, Javascript, Python, Django, Machine Learning
 
