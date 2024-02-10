@@ -9,8 +9,8 @@ I gathered the dataset from Kaggle, link for the same is https://www.kaggle.com/
 
 ### Required Libraries
 The libraries required for this project are:
-• Numpy (to perform logical/mathematical operations on arrays/matrices)\n
-• Pandas (data analysis & manipulation)
+• Numpy (to perform logical/mathematical operations on arrays/matrices)<br>
+• Pandas (data analysis & manipulation)<br>
 • sklearn (Machine learning library).
 
 Tech Stack: HTML, CSS, Javascript, Python, Django, Machine Learning
