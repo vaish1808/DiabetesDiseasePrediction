@@ -7,13 +7,13 @@ platform.
 ## Dataset
 I gathered the dataset from Kaggle, link for the same is https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database. This dataset is originally from the National Institute of Diabetes and Digestive and Kidney Diseases. The datasets consists of several medical predictor variables and one target variable, Outcome. Predictor variables includes the number of pregnancies the patient has had, their BMI, insulin level, age, and so on.
 
-### Required Libraries
+## Required Libraries
 The libraries required for this project are:<br>
 • Numpy (to perform logical/mathematical operations on arrays/matrices)<br>
 • Pandas (data analysis & manipulation)<br>
 • sklearn (Machine learning library).
 
-#### Preprocessing the dataset
+## Preprocessing the dataset
 • Check for missing data : As sometimes if values are missing it might create error while training model. <br>
 • Co-relation matrix : used to find co-relation b/w various columns. <br>
 • Heat map : Since results of co-relation are not that clear so to visualise it in better manner we plot heat map....darker the color, least is the co-relation, outcome least dependent on bp & most on glucose. <br>
