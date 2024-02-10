@@ -1,7 +1,7 @@
 # Diabetes Disease Prediction
-
-Diasense is a website that not only predicts diabetes risk but also offers vital information on diabetes
-types, symptoms, causes, recommended exercises, and dietary advice, serving as an informative and diagnostic
+## Introduction
+Diasense is a website that not only predicts risk associated with the diabetes but also offers vital information on diabetes such as its
+types, symptoms, causes, recommended exercises, and dietary advice thus serving as an informative and diagnostic
 platform.
 
 Libraries used : Numpy, Pandas, Scikit-Learn
