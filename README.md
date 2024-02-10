@@ -9,7 +9,7 @@ I gathered the dataset from Kaggle, link for the same is https://www.kaggle.com/
 
 ### Required Libraries
 The libraries required for this project are:
-• Numpy (to perform logical/mathematical operations on arrays/matrices)
+• Numpy (to perform logical/mathematical operations on arrays/matrices)\n
 • Pandas (data analysis & manipulation)
 • sklearn (Machine learning library).
 
